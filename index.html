@@ -250,7 +250,7 @@
                 }, 60000);
 
                 const typeofEvent = 'keydown'
-                 const StartEvent = (e)=>{
+                 const StartEventforKeyboard = (e)=>{
                   e.preventDefault()  
                   const code = e.key
                   if(i%60==0 && i!=0){
@@ -286,7 +286,37 @@
                     
 
                 }  
-                 window.addEventListener(typeofEvent,StartEvent)
+                const StartEventforMobile = (e) => {
+    // Get the last typed character
+    const code = e.target.value.slice(-1); 
+    // Clear the input so we only capture one character at a time
+    e.target.value = "";
+
+    if (!code) return;
+
+    // Auto-scroll after every 60 characters
+    if (i % 60 === 0 && i !== 0) box.scrollTop += 50;
+
+    // Check if typed character is correct
+    if (code === text[i]) {
+        document.querySelector("#char-" + i).style.color = "white";
+        document.querySelector("#char-" + i).classList.remove("cursor");
+        character++;
+    } else {
+        document.querySelector("#char-" + i).style.color = "red";
+        document.querySelector("#char-" + i).style.textDecoration = "line-through";
+        document.querySelector("#char-" + i).classList.remove("cursor");
+    }
+
+    typedcharacter++;
+    i++;
+    // Move cursor to next character
+    if (i < text.length) {
+        document.querySelector("#char-" + i).classList.add("cursor");
+    }
+};
+
+                 window.addEventListener(typeofEvent,StartEventforKeyboard)
                  hiddenInput.addEventListener("input",StartEvent)
                 
             })
