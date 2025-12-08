@@ -1,309 +1,289 @@
-    <!DOCTYPE html>
-    <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-    <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-    <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-    <!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
-    <html>
-        <head>
-            <meta charset="utf-8">
-            <meta http-equiv="X-UA-Compatible" content="IE=edge">
-            <title></title>
-            <meta name="description" content="">
-            <meta name="viewport" content="width=device-width, initial-scale=1">
-            <link rel="stylesheet" href="">
-            <style>
-                .box::-webkit-scrollbar{
-                width: 10px;
-                
-                
-                }
-                .box::-webkit-scrollbar-thumb{
-                    background-color: rgb(103, 101, 101);
-                    border-radius: 20px;
-                }
-                .box{
-                    
-                    box-shadow: 0px 0px 10px white;
-                    margin-top: 10%;
-                    padding: 10px;
-                    
-                }
-                #button{
-                    height: 80px;
-                    width: 150px;
-                    border-radius: 45px;
-                    cursor: pointer;
-                    background-color: rgb(64, 64, 156);
-                    color: white;
-                    border: none;
-                    font-size: 25px;
-                    font-weight: 400;
-                    ;
-                }
-                .cursor {
-                        border-right: 2px solid white;
-                        animation: blink 0.8s steps(2, start) infinite;
-                        }
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title></title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="">
+<style>
+.box::-webkit-scrollbar{
+width: 10px;
 
-                @keyframes blink {
-                        to {
-                            border-color: transparent;
-                        }
-                }
-                
 
-                @media (max-width: 1024px) {
-                    #result {
-                        font-size: 35px !important;
-                    }
-                    #button {
-                        width: 140px;
-                        height: 65px;
-                        font-size: 22px;
-                    }
-                    .box {
-                        width: 70% !important;
-                        font-size: 28px !important;
-                        height: 280px !important;
-                    }
-                    body div[style*="display: flex"] {
-                        flex-wrap: wrap;
-                        gap: 20px;
-                    }
-                }
+}
+.box::-webkit-scrollbar-thumb{
+background-color: rgb(103, 101, 101);
+border-radius: 20px;
+}
+.box{
 
-                @media (max-width: 768px) {
-                    #result {
-                        font-size: 30px !important;
-                    }
-                    #button {
-                        width: 130px;
-                        height: 60px;
-                        font-size: 20px;
-                    }
-                    .box {
-                        width: 85% !important;
-                        font-size: 24px !important;
-                        height: 250px !important;
-                    }
-                }
+box-shadow: 0px 0px 10px white;
+margin-top: 10%;
+padding: 10px;
 
-                @media (max-width: 480px) {
-                    #result {
-                        font-size: 24px !important;
-                        padding-top: 20px;
-                    }
-                    #button {
-                        width: 120px;
-                        height: 55px;
-                        font-size: 18px;
-                    }
-                    .box {
-                        width: 90% !important;
-                        font-size: 20px !important;
-                        height: 220px !important;
-                        margin-top: 20px !important;
-                    }
+}
+#button{
+height: 80px;
+width: 150px;
+border-radius: 45px;
+cursor: pointer;
+background-color: rgb(64, 64, 156);
+color: white;
+border: none;
+font-size: 25px;
+font-weight: 400;
+;
+}
+.cursor {
+border-right: 2px solid white;
+animation: blink 0.8s steps(2, start) infinite;
+}
 
-                    body div[style*="display: flex"] {
-                        flex-direction: column !important;
-                        justify-content: center !important;
-                        align-items: center !important;
-                    }
-                }
-
-            </style>
-        </head>
-        
-
-        <body style="background-color: #000000; ">
-    <input id="hiddenInputforMobile" type="text" 
-        >
-        <div id="result" style="font-size: 50px; padding-top: 3%; text-align: center; height: 80px; width: 100%;">
-
-        </div>
-            <div style=" display: flex;align-items: center; justify-content: space-evenly;">
-                <button id="button">Start Test</button>   
-                <div class="box" style= " margin-top: 30px; height: 300px; width: 500px;  font-size: 40px; overflow: auto;  color: rgb(103, 101, 101);"></div>
-            </div>
-        <div class="result2" style="border: 2px solid white; height: 150px; width: 100px;">
-
-        </div>
+@keyframes blink {
+to {
+border-color: transparent;
+}
+}
             
-            <script>
-                const typingParagraphs = [
-                                        `In the world of technology, progress never truly stops; it only transforms and finds new directions to grow. Every year, innovations reshape our habits, our work, and even the way we communicate with those around us. What once required hours of effort can now be done in seconds, and what once felt impossible is now a normal part of everyday life. But with every upgrade comes responsibility: learning, adapting, and pushing beyond comfort zones. Programmers, engineers, designers, and dreamers play essential roles in shaping this future. They sit quietly behind glowing screens, sipping tea or coffee, thinking deeply before typing each line of code. Their ideas travel across wires, fiber cables, satellites, and data centers, reaching billions of people almost instantly. Technology demands patience, curiosity, and discipline, because even a small mistake can cause confusion or failure. Yet every failure teaches something that success never could. The people who continue trying, testing, improving, and learning are the ones who truly shape the digital world we depend on today and will depend on tomorrow.`,
 
-                                        `Success never arrives suddenly; it grows slowly, like a seed turning into a massive tree. At first, nothing seems to happen, and many people give up too early, believing that effort is wasted. But the truth is that progress often hides beneath the surface, building quietly. Those who stay consistent, who show up daily even when motivation is low, are the ones who eventually see results. Typing faster, coding better, speaking clearly, or solving problems logically — all of these skills require time and repetition. Mistakes are not enemies; they are friendly reminders telling us where improvement is needed. The real challenge is not speed or talent, but patience and resilience. Every expert was once confused, slow, and unsure. But they trusted the process, embraced mistakes, and kept improving bit by bit. The journey may feel slow, but each day contributes to a stronger mind, sharper skills, and a more confident self. If you keep going, you will see changes you once thought were impossible.`,
+            @media (max-width: 1024px) {
+                #result {
+                    font-size: 35px !important;
+                }
+                #button {
+                    width: 140px;
+                    height: 65px;
+                    font-size: 22px;
+                }
+                .box {
+                    width: 70% !important;
+                    font-size: 28px !important;
+                    height: 280px !important;
+                }
+                body div[style*="display: flex"] {
+                    flex-wrap: wrap;
+                    gap: 20px;
+                }
+            }
 
-                                        `Life in the digital age is a constant race between convenience and distraction. We hold powerful tools in our hands, yet often struggle to use them wisely. A single device can help us learn programming, explore science, build businesses, talk to distant friends, or watch endless entertainment. The challenge is balance — choosing productivity over procrastination. Focus has become a rare and valuable resource. Notifications, messages, videos, and scrolling storms can quietly steal hours without us noticing. But one disciplined hour of deep focus can achieve more than five hours of distracted work. To succeed today, we must train our minds to stay steady, avoid noise, and remain intentional. Writing, reading, typing, thinking — all are exercises for the brain. Strength grows where effort is applied consistently. So, each time you practice typing or coding, remind yourself that you are not just learning a skill. You are shaping mindset, discipline, and inner strength that will support every future goal.`,
+            @media (max-width: 768px) {
+                #result {
+                    font-size: 30px !important;
+                }
+                #button {
+                    width: 130px;
+                    height: 60px;
+                    font-size: 20px;
+                }
+                .box {
+                    width: 85% !important;
+                    font-size: 24px !important;
+                    height: 250px !important;
+                }
+            }
 
-                                        `Every programmer remembers the first time they stared at a blank screen, wondering how to start and feeling nervous about each line of code. At that moment, everything looks complicated, and tutorials feel overwhelming. But after writing a few programs, solving basic problems, building small projects, understanding functions and loops, suddenly everything begins to make sense. It is like learning to type: at first your fingers move slowly, your eyes jump between screen and keyboard, and every mistake feels frustrating. But day by day, your speed improves, accuracy increases, and your hands move almost automatically. Skills don't appear magically; they grow through repetition and patience. The keyboard becomes an extension of your thoughts, and code becomes a language you speak. That transformation is powerful — it turns confusion into clarity and hesitation into confidence. Anyone willing to practice consistently will experience this shift, regardless of their background or starting point.`,
+            @media (max-width: 480px) {
+                #result {
+                    font-size: 24px !important;
+                    padding-top: 20px;
+                }
+                #button {
+                    width: 120px;
+                    height: 55px;
+                    font-size: 18px;
+                }
+                .box {
+                    width: 90% !important;
+                    font-size: 20px !important;
+                    height: 220px !important;
+                    margin-top: 20px !important;
+                }
 
-                                        `Typing is more than hitting keys quickly; it is coordination between eyes, mind, and fingers. Good typing habit strengthens concentration, rhythm, and precision. Professional typists don't chase speed first — they chase accuracy, consistency, and comfort. When speed comes naturally, errors automatically decrease. A smooth typing flow feels almost musical, like each key has its own sound and timing. The keyboard turns into a piano, and your fingers become instruments of thought. Practicing daily for fifteen to thirty minutes can build typing muscle memory that lasts a lifetime. Employers value fast, accurate typists because productivity increases dramatically when communication becomes effortless. Whether drafting emails, writing documentation, coding, or preparing presentations — typing skill saves time, reduces frustration, and boosts confidence. Keep your posture straight, wrists relaxed, and eyes on the screen. With discipline and focus, even the slowest beginner can outperform someone who types fast but carelessly.`,
+                body div[style*="display: flex"] {
+                    flex-direction: column !important;
+                    justify-content: center !important;
+                    align-items: center !important;
+                }
+            }
 
-                                        `The internet has become the world's largest library, classroom, office, and marketplace. People learn new languages, build companies, teach skills, entertain audiences, and create art — all from a screen. With so much opportunity available, the only real limitation is how we choose to use our time and curiosity. Many people underestimate the power of consistent online learning. Just thirty minutes a day can build expertise in programming, typing, design, writing, or marketing. Yet most users scroll endlessly, consuming rather than creating. Creation builds value; consumption only entertains. Imagine the possibilities when you treat the internet not as a distraction machine but as a growth machine. Thousands of tutorials, free resources, and communities are waiting. Your future is not determined by where you start, but by what you choose to do each day. Small steps, repeated consistently, become success stories that inspire others. Start now, and let tomorrow praise your discipline.`,
+</style>
+</head>
+<body style="background-color: #000000; ">
+<div id="result" style="font-size: 50px; padding-top: 3%; text-align: center; height: 80px; width: 100%;">
 
-                                        `Every skill has a learning curve, and the beginning always feels the hardest. When progress is slow, the mind whispers doubts — “Maybe this is not for me,” or “Others are faster than me.” But comparison is a trap. Everyone learns differently, and speed should not be measured by someone else's timeline. Improvement is personal. Even typing tests are not battles against other people; they are measurements of your own focus and growth. The moment you shift from competing with others to competing with yesterday's self, learning becomes enjoyable. Patience is strength, and consistency is power. There will be days when you feel unstoppable and days when progress feels invisible. Both are part of the journey. Trust the effort you put in, because each practice session, each paragraph, each keystroke builds momentum. Growth hides in small details — you only notice it when you look back and realize how far you have come.`,
+</div>
+<div style=" display: flex;align-items: center; justify-content: space-evenly;">
+<button id="button">Start Test</button>   
+<div class="box" style= " margin-top: 30px; height: 300px; width: 500px;  font-size: 40px; overflow: auto;  color: rgb(103, 101, 101);"></div>
+</div>
 
-                                        `Modern work demands more than talent; it demands adaptability. Tools change, languages update, industries shift, and new technology replaces old methods. Those who stay flexible, curious, and willing to learn continuously remain valuable. Typing skill, once considered simple, is now foundational in programming, writing, data entry, customer support, research, and countless other fields. The faster and more accurately you type, the more fluent your digital communication becomes. And communication is not just messages; it is thought transmission. Clear, fast expression means clearer thinking. When your hands respond instantly to your ideas, creativity flows without interruption. Treat practice like training, not pressure. Set small goals, celebrate progress, and repeat. Every keystroke strengthens your brain-to-hand connection. Every session increases your confidence. With time, typing becomes less of a skill and more of a superpower that supports every career dream.`,
 
-                                        `Habits shape destiny more than motivation ever will. Motivation gives energy to start, but habits keep momentum alive even when motivation fades. The most successful learners create routine: wake up, sit down, practice, improve. Small habits, repeated daily, lead to massive progress over months and years. Typing practice is a perfect example. If you type just five extra minutes a day, you will see improvement without stress. Your fingers become faster, your concentration sharpens, and your brain processes text more smoothly. Over time, you notice fewer mistakes, less eye movement, and a comfortable typing rhythm. This advantage scales across tasks — emails become quick, reports take less time, code flows faster, and creative writing feels effortless. Successful people master tiny behaviors that others ignore. So build productive habits now, because each keystroke is not just practice — it is an investment in your future capability, discipline, and confidence.`,
+<script>
+const typingParagraphs = [
+`In the world of technology, progress never truly stops; it only transforms and finds new directions to grow. Every year, innovations reshape our habits, our work, and even the way we communicate with those around us. What once required hours of effort can now be done in seconds, and what once felt impossible is now a normal part of everyday life. But with every upgrade comes responsibility: learning, adapting, and pushing beyond comfort zones. Programmers, engineers, designers, and dreamers play essential roles in shaping this future. They sit quietly behind glowing screens, sipping tea or coffee, thinking deeply before typing each line of code. Their ideas travel across wires, fiber cables, satellites, and data centers, reaching billions of people almost instantly. Technology demands patience, curiosity, and discipline, because even a small mistake can cause confusion or failure. Yet every failure teaches something that success never could. The people who continue trying, testing, improving, and learning are the ones who truly shape the digital world we depend on today and will depend on tomorrow.`,
 
-                                        `The journey of mastering typing, programming, or any technical skill begins with curiosity and grows through persistence. Curiosity asks, “How does this work?” Persistence answers, “Let me try again.” Each day brings new mistakes, new lessons, and new accomplishments. Sometimes progress feels invisible, but that does not mean it is absent. Your mind learns silently; it organizes patterns, builds memory, and strengthens neural pathways. Practice is not just repetition — it is transformation. And transformation requires patience. When you sit down to type long passages, you are not only improving speed and accuracy; you are training your attention, improving hand coordination, and strengthening discipline. Great results do not require perfection; they require consistency. Trust your effort, enjoy the journey, and let each paragraph remind you that growth is happening, even when it feels slow. You will look back soon and realize how much stronger, faster, and more confident you have become.`
-                                        ];
+`Success never arrives suddenly; it grows slowly, like a seed turning into a massive tree. At first, nothing seems to happen, and many people give up too early, believing that effort is wasted. But the truth is that progress often hides beneath the surface, building quietly. Those who stay consistent, who show up daily even when motivation is low, are the ones who eventually see results. Typing faster, coding better, speaking clearly, or solving problems logically — all of these skills require time and repetition. Mistakes are not enemies; they are friendly reminders telling us where improvement is needed. The real challenge is not speed or talent, but patience and resilience. Every expert was once confused, slow, and unsure. But they trusted the process, embraced mistakes, and kept improving bit by bit. The journey may feel slow, but each day contributes to a stronger mind, sharper skills, and a more confident self. If you keep going, you will see changes you once thought were impossible.`,
 
-                let choiceofparagraph = Math.floor(Math.random() * typingParagraphs.length)
-                
+`Life in the digital age is a constant race between convenience and distraction. We hold powerful tools in our hands, yet often struggle to use them wisely. A single device can help us learn programming, explore science, build businesses, talk to distant friends, or watch endless entertainment. The challenge is balance — choosing productivity over procrastination. Focus has become a rare and valuable resource. Notifications, messages, videos, and scrolling storms can quietly steal hours without us noticing. But one disciplined hour of deep focus can achieve more than five hours of distracted work. To succeed today, we must train our minds to stay steady, avoid noise, and remain intentional. Writing, reading, typing, thinking — all are exercises for the brain. Strength grows where effort is applied consistently. So, each time you practice typing or coding, remind yourself that you are not just learning a skill. You are shaping mindset, discipline, and inner strength that will support every future goal.`,
 
-                // const text =  document.querySelector('.box').textContent[0]
-                // console.log(text);
-                
-                let i 
-                let Time = 60
-                let character 
-                let typedcharacter
-                
-                const box = document.querySelector(".box")
-                const hiddenInput = document.getElementById("hiddenInputforMobile");
-                
-                const result = document.querySelector("#result")
-                result.hidden = true
-                let text = []
-                const texttoArray = ()=> {
-                i=0
-                text = Array.from(typingParagraphs[choiceofparagraph]) 
-                text.forEach((item)=>{
-                    const span = document.createElement("span")
-                    span.textContent=item
-                    span.id="char-"+i
-            
-                    box.appendChild(span)
-                    i++
-                })}
-                (texttoArray)();
-                const remainingtime = document.createElement("span")
-                remainingtime.textContent = "Remaining Time: "
-                remainingtime.style.color="white"
-                const time =  document.createElement("span")
-                time.textContent = Time + "s"
-                time.style.color="white"
-                const Speed = document.createElement("span")
-                Speed.textContent = "WPM: "
-                Speed.style.color="white"
-                const wpm = document.createElement("span")
-                wpm.style.color="white"
-                wpm.textContent = 0
-                const accuracy = document.createElement("span")
-                accuracy.textContent = "Accuracy: "
-                accuracy.style.color="white"
-                accuracy.style.marginLeft="20px"
-                const acc = document.createElement("span")
-                acc.style.color="white"
-                acc.textContent = 0
+`Every programmer remembers the first time they stared at a blank screen, wondering how to start and feeling nervous about each line of code. At that moment, everything looks complicated, and tutorials feel overwhelming. But after writing a few programs, solving basic problems, building small projects, understanding functions and loops, suddenly everything begins to make sense. It is like learning to type: at first your fingers move slowly, your eyes jump between screen and keyboard, and every mistake feels frustrating. But day by day, your speed improves, accuracy increases, and your hands move almost automatically. Skills don't appear magically; they grow through repetition and patience. The keyboard becomes an extension of your thoughts, and code becomes a language you speak. That transformation is powerful — it turns confusion into clarity and hesitation into confidence. Anyone willing to practice consistently will experience this shift, regardless of their background or starting point.`,
 
-                
-                const button = document.querySelector("#button")
-                button.addEventListener("click", ()=>{
-                    character=0
-                    typedcharacter=0
-                    i=0
-                hiddenInput.focus();
+`Typing is more than hitting keys quickly; it is coordination between eyes, mind, and fingers. Good typing habit strengthens concentration, rhythm, and precision. Professional typists don't chase speed first — they chase accuracy, consistency, and comfort. When speed comes naturally, errors automatically decrease. A smooth typing flow feels almost musical, like each key has its own sound and timing. The keyboard turns into a piano, and your fingers become instruments of thought. Practicing daily for fifteen to thirty minutes can build typing muscle memory that lasts a lifetime. Employers value fast, accurate typists because productivity increases dramatically when communication becomes effortless. Whether drafting emails, writing documentation, coding, or preparing presentations — typing skill saves time, reduces frustration, and boosts confidence. Keep your posture straight, wrists relaxed, and eyes on the screen. With discipline and focus, even the slowest beginner can outperform someone who types fast but carelessly.`,
 
-                    hiddenInput.click();
+`The internet has become the world's largest library, classroom, office, and marketplace. People learn new languages, build companies, teach skills, entertain audiences, and create art — all from a screen. With so much opportunity available, the only real limitation is how we choose to use our time and curiosity. Many people underestimate the power of consistent online learning. Just thirty minutes a day can build expertise in programming, typing, design, writing, or marketing. Yet most users scroll endlessly, consuming rather than creating. Creation builds value; consumption only entertains. Imagine the possibilities when you treat the internet not as a distraction machine but as a growth machine. Thousands of tutorials, free resources, and communities are waiting. Your future is not determined by where you start, but by what you choose to do each day. Small steps, repeated consistently, become success stories that inspire others. Start now, and let tomorrow praise your discipline.`,
 
-                    button.hidden = true
-                    result.hidden = false
-                    result.innerHTML = ""
-                    result.appendChild(remainingtime)
-                    remainingtime.appendChild(time)
-                    // console.log("value of i"+i);
-                    
-                    document.querySelector("#char-"+i).classList.add("cursor")
-                    
-                const interval = setInterval(() => {
-                    console.log(Time);
-                        
-                        Time--
-                        time.textContent = Time + "s"
-                        
-                    }, 1000);
+`Every skill has a learning curve, and the beginning always feels the hardest. When progress is slow, the mind whispers doubts — “Maybe this is not for me,” or “Others are faster than me.” But comparison is a trap. Everyone learns differently, and speed should not be measured by someone else's timeline. Improvement is personal. Even typing tests are not battles against other people; they are measurements of your own focus and growth. The moment you shift from competing with others to competing with yesterday's self, learning becomes enjoyable. Patience is strength, and consistency is power. There will be days when you feel unstoppable and days when progress feels invisible. Both are part of the journey. Trust the effort you put in, because each practice session, each paragraph, each keystroke builds momentum. Growth hides in small details — you only notice it when you look back and realize how far you have come.`,
 
-                    setTimeout(() => {
-                        Time=60
-                        clearInterval(interval)
-                        button.hidden = false
-                        box.innerHTML = ""
-                        box.scrollTop = 0
-                        // i=0
-                        // character=0
-                        // typedcharacter=0
-                        choiceofparagraph = Math.floor(Math.random() * typingParagraphs.length)
-                        texttoArray()
-                        // console.log("The character is:" +  character);
-                        
-                        wpm.textContent= Math.round(character/8)
-                        acc.textContent = Math.round((character/typedcharacter)*100) + "%"
-                        window.removeEventListener(typeofEvent,StartEvent)
-                        
-                        result.innerHTML=""
-                        result.appendChild(Speed)
-                        Speed.appendChild(wpm)
-                        result.appendChild(accuracy)
-                        accuracy.appendChild(acc)
-                    }, 60000);
+`Modern work demands more than talent; it demands adaptability. Tools change, languages update, industries shift, and new technology replaces old methods. Those who stay flexible, curious, and willing to learn continuously remain valuable. Typing skill, once considered simple, is now foundational in programming, writing, data entry, customer support, research, and countless other fields. The faster and more accurately you type, the more fluent your digital communication becomes. And communication is not just messages; it is thought transmission. Clear, fast expression means clearer thinking. When your hands respond instantly to your ideas, creativity flows without interruption. Treat practice like training, not pressure. Set small goals, celebrate progress, and repeat. Every keystroke strengthens your brain-to-hand connection. Every session increases your confidence. With time, typing becomes less of a skill and more of a superpower that supports every career dream.`,
 
-                    const typeofEvent = 'keydown'
-                    const StartEventforKeyboard = (e)=>{
-                    e.preventDefault()  
-                    const code = e.key
-                    if(i%60==0 && i!=0){
-                            box.scrollTop += 50
-                        }
-                    
-                    if (/^[a-zA-Z0-9_<>?/.,;:'"{}~!@#$%^&*()+=\-]$/.test(code) || code ===" " ){
-                        
-                        if(code===text[i]){
-                            document.querySelector("#char-"+i).style.color="white"
-                            document.querySelector("#char-"+i).classList.remove("cursor")
-                            document.querySelector("#char-"+(i+1)).classList.add("cursor")
-                            typedcharacter++
-                            character++
-                            i++
-                        }
-                        else{
-                            document.querySelector("#char-"+i).style.color="red"
-                            document.querySelector("#char-"+i).style.textDecoration="line-through"
-                            document.querySelector("#char-"+i).classList.remove("cursor")
-                            document.querySelector("#char-"+(i+1)).classList.add("cursor")
-                            typedcharacter++
-                            
-                            i++
-                        }
-                        
-                        
-                        
-                        
-                        
-                        
-                    }
-                        
+`Habits shape destiny more than motivation ever will. Motivation gives energy to start, but habits keep momentum alive even when motivation fades. The most successful learners create routine: wake up, sit down, practice, improve. Small habits, repeated daily, lead to massive progress over months and years. Typing practice is a perfect example. If you type just five extra minutes a day, you will see improvement without stress. Your fingers become faster, your concentration sharpens, and your brain processes text more smoothly. Over time, you notice fewer mistakes, less eye movement, and a comfortable typing rhythm. This advantage scales across tasks — emails become quick, reports take less time, code flows faster, and creative writing feels effortless. Successful people master tiny behaviors that others ignore. So build productive habits now, because each keystroke is not just practice — it is an investment in your future capability, discipline, and confidence.`,
 
-                    }  
-                    const StartEventforMobile = (e)=>{
-                    
-                    document.querySelector(".result2").innerHTML+="Hello"
-                    e.target.value = "";
+`The journey of mastering typing, programming, or any technical skill begins with curiosity and grows through persistence. Curiosity asks, “How does this work?” Persistence answers, “Let me try again.” Each day brings new mistakes, new lessons, and new accomplishments. Sometimes progress feels invisible, but that does not mean it is absent. Your mind learns silently; it organizes patterns, builds memory, and strengthens neural pathways. Practice is not just repetition — it is transformation. And transformation requires patience. When you sit down to type long passages, you are not only improving speed and accuracy; you are training your attention, improving hand coordination, and strengthening discipline. Great results do not require perfection; they require consistency. Trust your effort, enjoy the journey, and let each paragraph remind you that growth is happening, even when it feels slow. You will look back soon and realize how much stronger, faster, and more confident you have become.`
+];
 
-                    }
+let choiceofparagraph = Math.floor(Math.random() * typingParagraphs.length)
 
-                    window.addEventListener(typeofEvent,StartEventforKeyboard)
-                    hiddenInput.addEventListener("input",StartEventforMobile)
-                    
-                })
-                
 
-            </script>
-        </body>
-    </html>
+// const text =  document.querySelector('.box').textContent[0]
+// console.log(text);
 
+let i 
+let Time = 60
+let character 
+let typedcharacter
+
+const box = document.querySelector(".box")
+
+const result = document.querySelector("#result")
+result.hidden = true
+let text = []
+const texttoArray = ()=> {
+i=0
+text = Array.from(typingParagraphs[choiceofparagraph]) 
+text.forEach((item)=>{
+const span = document.createElement("span")
+span.textContent=item
+span.id="char-"+i
+
+box.appendChild(span)
+i++
+})}
+(texttoArray)();
+const remainingtime = document.createElement("span")
+remainingtime.textContent = "Remaining Time: "
+remainingtime.style.color="white"
+const time =  document.createElement("span")
+time.textContent = Time + "s"
+time.style.color="white"
+const Speed = document.createElement("span")
+Speed.textContent = "WPM: "
+Speed.style.color="white"
+const wpm = document.createElement("span")
+wpm.style.color="white"
+wpm.textContent = 0
+const accuracy = document.createElement("span")
+accuracy.textContent = "Accuracy: "
+accuracy.style.color="white"
+accuracy.style.marginLeft="20px"
+const acc = document.createElement("span")
+acc.style.color="white"
+acc.textContent = 0
+
+
+const button = document.querySelector("#button")
+button.addEventListener("click", ()=>{
+character=0
+typedcharacter=0
+i=0
+button.hidden = true
+result.hidden = false
+result.innerHTML = ""
+result.appendChild(remainingtime)
+remainingtime.appendChild(time)
+// console.log("value of i"+i);
+
+document.querySelector("#char-"+i).classList.add("cursor")
+
+const interval = setInterval(() => {
+console.log(Time);
+
+Time--
+time.textContent = Time + "s"
+
+}, 1000);
+
+setTimeout(() => {
+Time=60
+clearInterval(interval)
+button.hidden = false
+box.innerHTML = ""
+box.scrollTop = 0
+// i=0
+// character=0
+// typedcharacter=0
+choiceofparagraph = Math.floor(Math.random() * typingParagraphs.length)
+texttoArray()
+// console.log("The character is:" +  character);
+
+wpm.textContent= Math.round(character/8)
+acc.textContent = Math.round((character/typedcharacter)*100) + "%"
+window.removeEventListener(typeofEvent,StartEvent)
+
+result.innerHTML=""
+result.appendChild(Speed)
+Speed.appendChild(wpm)
+result.appendChild(accuracy)
+accuracy.appendChild(acc)
+}, 60000);
+
+const typeofEvent = 'keydown'
+const StartEvent = (e)=>{
+e.preventDefault()  
+const code = e.key
+if(i%60==0 && i!=0){
+box.scrollTop += 50
+}
+
+if (/^[a-zA-Z0-9_<>?/.,;:'"{}~!@#$%^&*()+=\-]$/.test(code) || code ===" " ){
+
+if(code===text[i]){
+document.querySelector("#char-"+i).style.color="white"
+document.querySelector("#char-"+i).classList.remove("cursor")
+document.querySelector("#char-"+(i+1)).classList.add("cursor")
+typedcharacter++
+character++
+i++
+}
+else{
+document.querySelector("#char-"+i).style.color="red"
+document.querySelector("#char-"+i).style.textDecoration="line-through"
+document.querySelector("#char-"+i).classList.remove("cursor")
+document.querySelector("#char-"+(i+1)).classList.add("cursor")
+typedcharacter++
+
+i++
+}
+
+
+
+
+
+
+}
+
+
+}  
+window.addEventListener(typeofEvent,StartEvent)
+
+})
+
+
+</script>
+</body>
+</html>
