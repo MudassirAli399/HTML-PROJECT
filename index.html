@@ -290,8 +290,8 @@
                 }  
                 const StartEventforMobile = (e)=>{
                     e.preventDefault()
-                    const code = e.target.value
-                    document.querySelector("#result2").textContent += code
+                    const code = e.target.value.slice(-1)
+                    document.querySelector(".result2").textContent += code
                     e.target.value=""
 
                 }
