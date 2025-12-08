@@ -50,6 +50,68 @@
                         border-color: transparent;
                     }
             }
+            
+
+            @media (max-width: 1024px) {
+                #result {
+                    font-size: 35px !important;
+                }
+                #button {
+                    width: 140px;
+                    height: 65px;
+                    font-size: 22px;
+                }
+                .box {
+                    width: 70% !important;
+                    font-size: 28px !important;
+                    height: 280px !important;
+                }
+                body div[style*="display: flex"] {
+                    flex-wrap: wrap;
+                    gap: 20px;
+                }
+            }
+
+            @media (max-width: 768px) {
+                #result {
+                    font-size: 30px !important;
+                }
+                #button {
+                    width: 130px;
+                    height: 60px;
+                    font-size: 20px;
+                }
+                .box {
+                    width: 85% !important;
+                    font-size: 24px !important;
+                    height: 250px !important;
+                }
+            }
+
+            @media (max-width: 480px) {
+                #result {
+                    font-size: 24px !important;
+                    padding-top: 20px;
+                }
+                #button {
+                    width: 120px;
+                    height: 55px;
+                    font-size: 18px;
+                }
+                .box {
+                    width: 90% !important;
+                    font-size: 20px !important;
+                    height: 220px !important;
+                    margin-top: 20px !important;
+                }
+
+                body div[style*="display: flex"] {
+                    flex-direction: column !important;
+                    justify-content: center !important;
+                    align-items: center !important;
+                }
+            }
+
         </style>
     </head>
     <body style="background-color: #000000; ">
