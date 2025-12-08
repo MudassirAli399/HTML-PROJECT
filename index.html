@@ -124,7 +124,9 @@
             <button id="button">Start Test</button>   
             <div class="box" style= " margin-top: 30px; height: 300px; width: 500px;  font-size: 40px; overflow: auto;  color: rgb(103, 101, 101);"></div>
         </div>
-     
+     <div class="result2" style="border: 2px solid white; height: 150px; width: 100px;">
+
+     </div>
         
         <script>
             const typingParagraphs = [
@@ -286,35 +288,13 @@
                     
 
                 }  
-                const StartEventforMobile = (e) => {
-    // Get the last typed character
-    const code = e.target.value.slice(-1); 
-    // Clear the input so we only capture one character at a time
-    e.target.value = "";
+                const StartEventforMobile = (e)=>{
+                    e.preventDefault()
+                    const code = e.target.value
+                    document.querySelector("#result2").textContent = code
+                    e.target.value=""
 
-    if (!code) return;
-
-    // Auto-scroll after every 60 characters
-    if (i % 60 === 0 && i !== 0) box.scrollTop += 50;
-
-    // Check if typed character is correct
-    if (code === text[i]) {
-        document.querySelector("#char-" + i).style.color = "white";
-        document.querySelector("#char-" + i).classList.remove("cursor");
-        character++;
-    } else {
-        document.querySelector("#char-" + i).style.color = "red";
-        document.querySelector("#char-" + i).style.textDecoration = "line-through";
-        document.querySelector("#char-" + i).classList.remove("cursor");
-    }
-
-    typedcharacter++;
-    i++;
-    // Move cursor to next character
-    if (i < text.length) {
-        document.querySelector("#char-" + i).classList.add("cursor");
-    }
-};
+                }
 
                  window.addEventListener(typeofEvent,StartEventforKeyboard)
                  hiddenInput.addEventListener("input",StartEventforMobile)
