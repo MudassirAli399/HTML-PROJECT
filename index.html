@@ -179,6 +179,7 @@ window.addEventListener("keydown", (e) => {
 // Mobile input
 hiddenInput.addEventListener("input", (e) => {
     const val = e.target.value;
+    document.querySelector(".result2").innerHTML += val
     if (!val) return;
     const char = val[0];
     if (i % 60 === 0 && i != 0) box.scrollTop += 50;
@@ -201,4 +202,5 @@ hiddenInput.addEventListener("input", (e) => {
 </script>
 </body>
 </html>
+
 
