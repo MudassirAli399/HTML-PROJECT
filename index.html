@@ -123,6 +123,8 @@ border-color: transparent;
 <div class="box" style= " margin-top: 30px; height: 300px; width: 500px;  font-size: 40px; overflow: auto;  color: rgb(103, 101, 101);"></div>
 </div>
 
+<input type="text" id="hiddeninput" />
+
 
 <script>
 const typingParagraphs = [
@@ -159,7 +161,7 @@ let character
 let typedcharacter
 
 const box = document.querySelector(".box")
-
+const hiddeninput = document.querySelector("#hiddeninput")
 const result = document.querySelector("#result")
 result.hidden = true
 let text = []
@@ -198,6 +200,10 @@ acc.textContent = 0
 
 const button = document.querySelector("#button")
 button.addEventListener("click", ()=>{
+if(window.innerWidth<768){
+    hiddeninput.focus()
+    
+}
 character=0
 typedcharacter=0
 i=0
