@@ -200,10 +200,7 @@ acc.textContent = 0
 
 const button = document.querySelector("#button")
 button.addEventListener("click", ()=>{
-if(window.innerWidth<768){
-    hiddeninput.focus()
-    
-}
+
 character=0
 typedcharacter=0
 i=0
@@ -284,9 +281,48 @@ i++
 }
 
 
-}  
-window.addEventListener(typeofEvent,StartEvent)
+} 
+if(window.innerWidth<768){
+    hiddeninput.focus()
+    hiddeninput.addEventListener("input",(e)=>{
 
+const code = e.data
+if(i%60==0 && i!=0){
+box.scrollTop += 50
+}
+
+if (/^[a-zA-Z0-9_<>?/.,;:'"{}~!@#$%^&*()+=\-]$/.test(code) || code ===" " ){
+
+if(code===text[i]){
+document.querySelector("#char-"+i).style.color="white"
+document.querySelector("#char-"+i).classList.remove("cursor")
+document.querySelector("#char-"+(i+1)).classList.add("cursor")
+typedcharacter++
+character++
+i++
+}
+else{
+document.querySelector("#char-"+i).style.color="red"
+document.querySelector("#char-"+i).style.textDecoration="line-through"
+document.querySelector("#char-"+i).classList.remove("cursor")
+document.querySelector("#char-"+(i+1)).classList.add("cursor")
+typedcharacter++
+
+i++
+}
+
+
+
+
+
+
+}
+        
+    })
+
+}else{
+window.addEventListener(typeofEvent,StartEvent)
+}
 })
 
 
